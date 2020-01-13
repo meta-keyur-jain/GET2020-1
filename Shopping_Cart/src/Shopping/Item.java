@@ -4,7 +4,7 @@ class Item {
 	private double price;
 	private int quantity;
 	private String name;
-	
+
 	Item(String name,int price){
 		this.price = price;
 		this.name = name;

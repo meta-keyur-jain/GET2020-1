@@ -2,7 +2,7 @@ package Shopping;
 import java.util.HashMap;
 
 public class Cart {
-	
+
 	//Map for product id and products object which contain detail about product
 	HashMap<Integer,Item> products = new HashMap<Integer,Item>();	
 	//Map for product id and products object which are in the cart of user
@@ -20,24 +20,24 @@ public class Cart {
 	Item prod10 = new Item("Panner",200);
 	Item prod11 = new Item("Egg",8);
 	Cart(){
-	//Add Id as key and object of product as value in map
-	products.put(1,prod1);
-	products.put(2,prod2);
-	products.put(3,prod3);
-	products.put(4,prod4);
-	products.put(5,prod5);
-	products.put(6,prod6);
-	products.put(7,prod7);
-	products.put(8,prod8);
-	products.put(9,prod9);
-	products.put(10,prod10);
-	products.put(11,prod11);
+		//Add Id as key and object of product as value in map
+		products.put(1,prod1);
+		products.put(2,prod2);
+		products.put(3,prod3);
+		products.put(4,prod4);
+		products.put(5,prod5);
+		products.put(6,prod6);
+		products.put(7,prod7);
+		products.put(8,prod8);
+		products.put(9,prod9);
+		products.put(10,prod10);
+		products.put(11,prod11);
 	}
 	//Method to show all the items of the website
 	void showItem(){
 		System.out.println("Id" +" \t \t"+ "Item Name" +" \t"+ "Price");
 		for (HashMap.Entry<Integer,Item> entry : products.entrySet()){
-				System.out.println(entry.getKey() +" \t \t"+entry.getValue().getName()+" \t \t"+ entry.getValue().getPrice());
+			System.out.println(entry.getKey() +" \t \t"+entry.getValue().getName()+" \t \t"+ entry.getValue().getPrice());
 		}
 	}
 	//Method to add item to user cart
