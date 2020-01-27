@@ -5,18 +5,22 @@ import java.util.Scanner;
  * 
  * @author Rahul
  * Created on 16 January 2020
- * Contains operations for finding area for different shapes
+ * contains operations of area on different shape
  */
-public class Area {
-	public static void main(String args[])
-	{
-		double length = 0, breadth = 0, height = 0, radius = 0, side = 0;
-		int option ,invalidInput = 0;
-		FindArea area = new FindArea();
+public class AreaOperation {
+	
+	static double length = 0, breadth = 0, height = 0, radius = 0, side = 0;
+	static int option ,invalidInput = 0;
+	/**
+	 * 
+	 * @param area : object of FindArea class object 
+	 *  do various operations on different shapes to find area 
+	 */
+	public static void operation(FindArea area){
 		Scanner sc = new Scanner(System.in);
 		do{
 			try {
-				System.out.println("Options :"+"\n"+"1: Area of triangle"+"\n"+"2: Area of rectangle"+"\n"+"3: Area of square"+"\n"+"4: Area of square"+"\n"+"5: Exit");
+				System.out.println("Options :"+"\n"+"1: Area of triangle"+"\n"+"2: Area of rectangle"+"\n"+"3: Area of square"+"\n"+"4: Area of circle"+"\n"+"5: Exit");
 				System.out.println(AreaMessage.enterOption);
 				option = sc.nextInt();
 				switch(option){
@@ -72,10 +76,11 @@ public class Area {
 							sc.nextLine();
 						}
 					}while(invalidInput == 0);
-					System.out.println("The area of triangle is:" + area.findCircle(radius));
+					System.out.println("The area of circle is:" + area.findCircle(radius));
 					break;
 				case 5:
 					sc.close();
+					System.out.println(AreaMessage.thankYou);
 					System.exit(0);
 				default:
 					System.out.println(AreaMessage.invalidData);

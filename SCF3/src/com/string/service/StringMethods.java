@@ -70,48 +70,29 @@ public class StringMethods {
 		String largestword = "";
 		String temp = "";
 		int maxlength = 0;
-		
+
 		int length = str.length();
 		int pre = 0;
 		for(int i=0; i<length; i++){
-			if(str.charAt(i) == ' ' || i == length-1 ) {
-				
-				if(i==length-1) {
+			if(str.charAt(i) == ' ' || i == length - 1 ) {
+
+				if(i == length - 1) {
 					temp += str.charAt(i);
 					i += 1;
 				}
-				
+
 				if((i - pre) >= maxlength){
-					
+
 					maxlength = i - pre;
 					largestword = temp;
-					}
+				}
 				pre = i;
 				temp = "";
 			} else {
 				temp = temp + str.charAt(i);
 			}
 		}
-		
+
 		return largestword;
-		/*int curr_length = 0 ,max_length = 0 ,start_index = 0 ,end_index = 0 ,i;
-		for(i=0;i<str.length();i++){
-			if((str.charAt(i) == ' ' || i==str.length()-1) && curr_length >= max_length ){
-				System.out.println("if condition");
-				max_length = curr_length;
-				start_index = i - curr_length;
-				end_index = i-1;
-				curr_length = 0;
-			}
-			else
-				curr_length++;
-		}
-		if(curr_length >= max_length ){
-			max_length = curr_length;
-			start_index = i - curr_length;
-			end_index = i-1;
-			curr_length = 0;
-		}
-		return str.substring(start_index, end_index + 1);*/
 	}
 }

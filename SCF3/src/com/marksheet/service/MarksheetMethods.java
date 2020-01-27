@@ -13,7 +13,7 @@ public class MarksheetMethods {
 	 * @param numStudent : total number of student
 	 * @return : average grade of student
 	 */
-	float averageGrade(int[] arr ,int numStudent){
+	float averageGrade(float[] arr ,int numStudent){
 		float average = 0;
 		int sumGrades = 0;
 		for(int i=0; i<numStudent; i++){
@@ -28,8 +28,8 @@ public class MarksheetMethods {
 	 * @param numStudent : total number of student
 	 * @return : maximum grade from student
 	 */
-	int maxGrade(int[] arr ,int numStudent){
-		int max = 0;
+	float maxGrade(float[] arr ,int numStudent){
+		float max = 0;
 		for(int i=0; i<numStudent; i++){
 			if(arr[i] > max)
 				max = arr[i];
@@ -42,16 +42,19 @@ public class MarksheetMethods {
 	 * @param numStudent : total number of student
 	 * @return : minimum grade from student
 	 */
-	int minGrade(int[] arr ,int numStudent){
-		int min = arr[0];
+	float minGrade(float[] arr ,int numStudent){
+		float min = arr[0];
 		for(int i=0;i<numStudent;i++){
 			if(arr[i] < min)
 				min = arr[i];
 		}
+		if(min == -0){
+			return 0;
+		}
 		return min;
 	}
 
-	float percentPass(int[] arr ,int numStudent){
+	float percentPass(float[] arr ,int numStudent){
 		int count = 0;
 		float percentage;
 		for(int i=0; i<numStudent; i++){

@@ -8,4 +8,5 @@ public class AreaMessage {
 	final static String circleData = "Enter Radius of Circle: ";
 	final static String enterOption = "Enter option:";
 	final static String invalidOption = "Invalid!! option entered";
+	final static String thankYou = "Thank you";
 }

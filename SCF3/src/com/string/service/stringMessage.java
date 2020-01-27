@@ -8,4 +8,5 @@ package com.string.service;
 public class stringMessage {
 	final static String invalidString = "Invalid string entered";
 	final static String invalidOperation = "Ënter valid operation";
+	final static String thankYou = "Thank you";
 }
