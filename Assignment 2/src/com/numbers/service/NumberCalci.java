@@ -46,7 +46,7 @@ public class NumberCalci {
 			characterToValueKeyForBase.add(characterToValueKeyList.get(i));
 		}
 		for(int i = 0; i < str.length() ; i++){
-			if(! characterToValueKeyForBase.contains(String.valueOf(str.charAt(i))))
+			if(!characterToValueKeyForBase.contains(String.valueOf(str.charAt(i))) || str.length() >= 7)
 				return false;
 		}
 		return true;

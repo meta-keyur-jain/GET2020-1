@@ -10,7 +10,7 @@ import java.util.Scanner;
  */
 public class FcfsOperation {
 	static Scanner sc = new Scanner(System.in);
-	static int numProcess = 0, processTimes = 2, option, invalidNum = 0;
+	static int numProcess = 0, processTimes = 2, option, invalidNum = 0, loop = 0;
 	static int[][] process;
 	/**
 	 * Getting data from users
@@ -35,13 +35,13 @@ public class FcfsOperation {
 		process = new int[numProcess][processTimes];
 		do{
 			try {
-				for(int i = 0; i < numProcess; i++){
-					System.out.println(FcfsMessage.arrivalAndBurst + (i + 1));
-					for(int j = 0; j < processTimes; j++){
-						process[i][j] = sc.nextInt();
-					}
-					invalidNum = 0;
+				while(loop < numProcess){
+					System.out.println(FcfsMessage.arrivalAndBurst + (loop + 1));
+						process[loop][0] = sc.nextInt();
+						process[loop][1] = sc.nextInt();
+						loop ++;
 				}
+				invalidNum = 0;
 			} catch (Exception e) {
 				invalidNum = 1;
 				System.out.println(FcfsMessage.invalidEntry);
