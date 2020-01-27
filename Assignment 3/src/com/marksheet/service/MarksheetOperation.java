@@ -9,7 +9,7 @@ import java.util.Scanner;
  * also contains method to perform operations of marksheet
  */
 public class MarksheetOperation {
-	static int numStudent = 0 ,option = 0 ,invalidInput = 0;
+	static int numStudent = 0 ,option = 0 ,invalidInput = 0, invalidGrade = 0;
 	static Scanner sc = new Scanner(System.in);
 	static float[] studentsGrades = new float[numStudent];
 	public static void store_data(MarksheetMethods method){
@@ -24,14 +24,23 @@ public class MarksheetOperation {
 					studentsGrades = new float[numStudent];
 					System.out.println(marksheetMessage.enterGrades);
 					int i = 0;
-					while(i != numStudent){
-						System.out.println("Student"+(i+1));
-						studentsGrades[i] = sc.nextFloat();
-						if(studentsGrades[i] >= 0 && studentsGrades[i] <= 100){
-							i++;
+					while(invalidGrade == 0){
+						try {
+							while(i < numStudent){
+								System.out.println("Student"+ (i + 1));
+								studentsGrades[i] = sc.nextFloat();
+								if(studentsGrades[i] >= 0 && studentsGrades[i] <= 100){
+									i++;
+								}
+								else
+									System.out.println(marksheetMessage.invalidGrades);
+							}
+							invalidGrade = 1;
+						} catch (Exception e) {
+							System.out.println("wrong input");
+							invalidGrade = 0;
+							sc.nextLine();
 						}
-						else
-							System.out.println(marksheetMessage.invalidGrades);
 					}
 					invalidInput = 1;
 				}

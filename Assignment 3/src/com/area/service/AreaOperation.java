@@ -31,12 +31,12 @@ public class AreaOperation {
 							breadth = sc.nextDouble();
 							height = sc.nextDouble();
 							invalidInput = 1;
+							System.out.println("The area of triangle is:" + area.findTriangle(breadth, height));
 						} catch (Exception e) {
 							System.out.println(AreaMessage.invalidData);
 							sc.nextLine();
 						}
 					}while(invalidInput == 0);
-					System.out.println("The area of triangle is:" + area.findTriangle(breadth, height));
 					break;
 				case 2:
 					do{
@@ -45,12 +45,12 @@ public class AreaOperation {
 							length = sc.nextDouble();
 							breadth = sc.nextDouble();
 							invalidInput = 1;
+							System.out.println("The area of rectangle is:" + area.findRectangle(length, breadth));
 						} catch (Exception e) {
 							System.out.println(AreaMessage.invalidData);
 							sc.nextLine();
 						}
 					}while(invalidInput == 0);
-					System.out.println("The area of rectangle is:" + area.findRectangle(length, breadth));
 					break;
 				case 3:
 					do{
@@ -58,12 +58,12 @@ public class AreaOperation {
 							System.out.print(AreaMessage.squareData);
 							side = sc.nextDouble();
 							invalidInput = 1;
+							System.out.println("The area of square is:" + area.findSquare(side));
 						} catch (Exception e) {
 							System.out.println(AreaMessage.invalidData);
 							sc.nextLine();
 						}
 					}while(invalidInput == 0);
-					System.out.println("The area of square is:" + area.findSquare(side));
 					break;
 				case 4:
 					do{
@@ -71,12 +71,12 @@ public class AreaOperation {
 							System.out.print(AreaMessage.circleData);
 							radius = sc.nextDouble();
 							invalidInput = 1;
+							System.out.println("The area of circle is:" + area.findCircle(radius));
 						} catch (Exception e) {
 							System.out.println(AreaMessage.invalidData);
 							sc.nextLine();
 						}
 					}while(invalidInput == 0);
-					System.out.println("The area of circle is:" + area.findCircle(radius));
 					break;
 				case 5:
 					sc.close();

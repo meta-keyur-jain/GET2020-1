@@ -67,29 +67,23 @@ public class StringMethods {
 	 * @return : largest word
 	 */
 	String largestWord(String str){
-		String largestword = "";
-		String temp = "";
-		int maxlength = 0;
-
-		int length = str.length();
-		int pre = 0;
+		String largestword = "", tempString = "";
+		int maxlength = 0, length = str.length(), pre = 0;
 		for(int i=0; i<length; i++){
 			if(str.charAt(i) == ' ' || i == length - 1 ) {
 
 				if(i == length - 1) {
-					temp += str.charAt(i);
+					tempString += str.charAt(i);
 					i += 1;
 				}
-
 				if((i - pre) >= maxlength){
-
 					maxlength = i - pre;
-					largestword = temp;
+					largestword = tempString;
 				}
 				pre = i;
-				temp = "";
+				tempString = "";
 			} else {
-				temp = temp + str.charAt(i);
+				tempString = tempString + str.charAt(i);
 			}
 		}
 
