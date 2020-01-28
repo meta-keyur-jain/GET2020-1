@@ -12,13 +12,13 @@ public class MathOperation {
 	static Scanner sc = new Scanner(System.in);
 	static int base = 10 ,option ,correctBase = 0, correctNum = 1;
 	static String num1 = "" ,num2 = "";
-
+	final static int ADD = 1, SUB = 2, MUL = 3, DIV = 4, COMPARE = 5, EXIT = 6;
 	/**
 	 * 
 	 * @param numCalc : object of NumberCalci class
 	 * perform operation to get data from user
 	 */
-	static void get_data(NumberCalci numCalc){
+	static void getData(NumberCalci numCalc){
 		do{
 			try {
 				System.out.println(Messages.enterBase);
@@ -75,19 +75,19 @@ public class MathOperation {
 				option = sc.nextInt();
 				//System.out.println("number 1 is:"+num1+"number 2 is"+num2+"base: "+base);
 				switch(option){
-				case 1:
+				case ADD:
 					System.out.println("The addition of two number is :"+ numCalc.add(num1,num2,base));
 					break;
-				case 2:
+				case SUB:
 					System.out.println("The subtraction of two number is :"+ numCalc.sub(num1,num2,base));
 					break;
-				case 3:
+				case MUL:
 					System.out.println("The multiplication of two number is :"+ numCalc.mul(num1,num2,base));
 					break;
-				case 4:
+				case DIV:
 					System.out.println("The division of two number is :"+ numCalc.div(num1,num2,base));
 					break;
-				case 5:
+				case COMPARE:
 					if(numCalc.compare(num1,num2) == 1)
 						System.out.println(num1 + " is greater than " + num2);
 					else if(numCalc.compare(num1,num2) == -1)
@@ -95,7 +95,7 @@ public class MathOperation {
 					else
 						System.out.println(Messages.equal);
 					break;
-				case 6:
+				case EXIT:
 					sc.close();
 					System.out.println(Messages.thankYou);
 					System.exit(0);

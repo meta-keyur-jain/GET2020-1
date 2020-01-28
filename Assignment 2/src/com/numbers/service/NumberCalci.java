@@ -38,6 +38,12 @@ public class NumberCalci {
 		valueToCharacter.put(14, "E");
 		valueToCharacter.put(15, "F");
 	}
+	/**
+	 * 
+	 * @param str : string to be checked a valid or not of given base
+	 * @param base : base of number
+	 * @return : true if valid else false
+	 */
 	public boolean isValidNumberString(String str, int base){
 		ArrayList<String> characterToValueKeyList = new ArrayList<String>(characterToValue.keySet());
 		Collections.sort(characterToValueKeyList);

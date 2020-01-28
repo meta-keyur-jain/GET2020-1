@@ -12,11 +12,12 @@ public class FcfsOperation {
 	static Scanner sc = new Scanner(System.in);
 	static int numProcess = 0, processTimes = 2, option, invalidNum = 0, loop = 0;
 	static int[][] process;
+	static final int FIND_COMPLTN_TIME = 1, FIND_TURNAROUND_TIME = 2, FIND_WAITING_TIME = 3, FIND_AVG_WAITING_TIME = 4, FIND_MAX_WAIT_TIME = 5, EXIT = 6;
 	/**
 	 * Getting data from users
 	 * @param scheduler : object of FcfsMethods
 	 */
-	static void get_data(FcfsMethods scheduler){
+	static void getData(FcfsMethods scheduler){
 		do{
 			try {
 				System.out.println(FcfsMessage.enterProcess);
@@ -61,36 +62,36 @@ public class FcfsOperation {
 			try {
 				option = sc.nextInt();
 				switch(option){
-				case 1:
+				case FIND_COMPLTN_TIME:
 					System.out.println(FcfsMessage.completionTime);
 					int[] completionTime = scheduler.completionTime(process);
 					for(int i = 0; i < process.length; i++){
 						System.out.println("Process" + ( i + 1) +":" + completionTime[i]);
 					}
 					break;
-				case 2:
+				case FIND_TURNAROUND_TIME:
 					System.out.println(FcfsMessage.turnAroundTime);
 					int[] turnAroundTime = scheduler.turnAroundTime(process);
 					for(int i  = 0; i < process.length; i++){
 						System.out.println("Process" + ( i + 1) +":" + turnAroundTime[i]);
 					}
 					break;
-				case 3:
+				case FIND_WAITING_TIME:
 					System.out.println(FcfsMessage.waitingTime);
 					int[] waitingTime = scheduler.waitingTime(process);
 					for(int i = 0; i < process.length; i++){
 						System.out.println("Process" + (i + 1) +":" + waitingTime[i]);
 					}
 					break;
-				case 4:
+				case FIND_AVG_WAITING_TIME:
 					System.out.println(FcfsMessage.averageTime);
 					System.out.println(scheduler.averageWaitingTime(process));
 					break;
-				case 5:
+				case FIND_MAX_WAIT_TIME:
 					System.out.println(FcfsMessage.maximumWaitingTime);
 					System.out.println(scheduler.maxWaitingTime(process));
 					break;
-				case 6:
+				case EXIT:
 					System.out.println(FcfsMessage.thankYou);
 					invalidNum = 1;
 					break;

@@ -11,7 +11,7 @@ public class Main {
 	public static void main(String args[]){
 		NumberCalci numCalc = new NumberCalci();
 		numCalc.setDefaultValue();
-		MathOperation.get_data(numCalc);
+		MathOperation.getData(numCalc);
 		MathOperation.operationOnData(numCalc);
 	}
 }

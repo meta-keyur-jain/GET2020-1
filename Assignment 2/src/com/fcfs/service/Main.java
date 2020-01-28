@@ -10,7 +10,7 @@ package com.fcfs.service;
 public class Main {
 	public static void main(String srgs[]){
 		FcfsMethods scheduler = new FcfsMethods(); 
-		FcfsOperation.get_data(scheduler);
+		FcfsOperation.getData(scheduler);
 		FcfsOperation.Operation(scheduler);
 	}
 }
