@@ -1,6 +1,8 @@
 package com.area.service;
 
 import java.util.Scanner;
+
+import com.project.messages.*;
 /**
  * 
  * @author Rahul
@@ -11,6 +13,10 @@ public class AreaOperation {
 	
 	static double length = 0, breadth = 0, height = 0, radius = 0, side = 0;
 	static int option ,invalidInput = 0;
+	/**
+	 * 
+	 */
+	final static int AREA_TRIANGLE = 1, AREA_RECTANGLE = 2, AREA_SQUARE = 3, AREA_CIRCLE = 4, EXIT = 5;
 	/**
 	 * 
 	 * @param area : object of FindArea class object 
@@ -24,7 +30,7 @@ public class AreaOperation {
 				System.out.println(AreaMessage.enterOption);
 				option = sc.nextInt();
 				switch(option){
-				case 1:
+				case AREA_TRIANGLE:
 					do{
 						try {
 							System.out.print(AreaMessage.triangleData);
@@ -38,7 +44,7 @@ public class AreaOperation {
 						}
 					}while(invalidInput == 0);
 					break;
-				case 2:
+				case AREA_RECTANGLE:
 					do{
 						try {
 							System.out.print(AreaMessage.rectangleData);
@@ -52,7 +58,7 @@ public class AreaOperation {
 						}
 					}while(invalidInput == 0);
 					break;
-				case 3:
+				case AREA_SQUARE:
 					do{
 						try {
 							System.out.print(AreaMessage.squareData);
@@ -65,7 +71,7 @@ public class AreaOperation {
 						}
 					}while(invalidInput == 0);
 					break;
-				case 4:
+				case AREA_CIRCLE:
 					do{
 						try {
 							System.out.print(AreaMessage.circleData);
@@ -78,9 +84,9 @@ public class AreaOperation {
 						}
 					}while(invalidInput == 0);
 					break;
-				case 5:
+				case EXIT:
 					sc.close();
-					System.out.println(AreaMessage.thankYou);
+					System.out.println(messages.thankYou);
 					System.exit(0);
 				default:
 					System.out.println(AreaMessage.invalidData);

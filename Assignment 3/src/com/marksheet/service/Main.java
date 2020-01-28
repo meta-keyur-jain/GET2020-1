@@ -9,7 +9,7 @@ package com.marksheet.service;
 public class Main {
 	public static void main(String args[]){
 		MarksheetMethods method = new MarksheetMethods();
-		MarksheetOperation.store_data(method);
+		MarksheetOperation.storeData(method);
 		MarksheetOperation.operation(method);
 	}
 }

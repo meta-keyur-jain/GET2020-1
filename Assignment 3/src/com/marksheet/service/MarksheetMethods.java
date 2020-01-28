@@ -53,7 +53,12 @@ public class MarksheetMethods {
 		}
 		return min;
 	}
-
+	/**
+	 * 
+	 * @param arr : array of students grades
+	 * @param numStudent : number of student
+	 * @return : percentage of passing students
+	 */
 	float percentPass(float[] arr ,int numStudent){
 		int count = 0;
 		float percentage;

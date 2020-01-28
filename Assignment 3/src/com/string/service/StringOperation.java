@@ -1,6 +1,8 @@
 package com.string.service;
 
 import java.util.Scanner;
+
+import com.project.messages.*;
 /**
  * 
  * @author Rahul
@@ -18,6 +20,7 @@ public class StringOperation {
 		Scanner sc = new Scanner(System.in);
 		int operation;
 		String str ,str1 ,str2;
+		final int CMP_STRING = 1, REV_STRING = 2, CONV_CASE = 3, FIND_LARG_WORD = 4, EXIT = 5;
 		while(true){
 			int invalidInput = 0;
 			try {
@@ -26,18 +29,18 @@ public class StringOperation {
 				operation = sc.nextInt();
 				sc.nextLine();
 				switch(operation){
-				case 1 :
+				case CMP_STRING :
 					while(invalidInput == 0){
 						try {
-							System.out.println("Enter the 1st string");
+							System.out.println(stringMessage.firstString);
 							//str1 = sc.next();
 							str1 = sc.nextLine();
-							System.out.println("Enter the 2nd string");
+							System.out.println(stringMessage.secondString);
 							str2 = sc.nextLine();
 							if(strMethod.compareStrings(str1, str2) != 0)
-								System.out.println("Both are equal");
+								System.out.println(stringMessage.equal);
 							else
-								System.out.println("Both are not equal");
+								System.out.println(stringMessage.notEqual);
 							invalidInput = 1; 
 						} catch (Exception e) {
 							System.out.println(stringMessage.invalidString);
@@ -45,10 +48,10 @@ public class StringOperation {
 						}
 					}
 					break;
-				case 2 :
+				case REV_STRING :
 					while(invalidInput == 0){
 						try {
-							System.out.println("Enter the string which have to be reversed");
+							System.out.println(stringMessage.enterString);
 							str = sc.nextLine();
 							//sc.nextLine();
 							System.out.println("The reversed string is:"+strMethod.reverseString(str));
@@ -59,10 +62,10 @@ public class StringOperation {
 						}
 					}
 					break;
-				case 3 :
+				case CONV_CASE :
 					while(invalidInput == 0){
 						try {
-							System.out.println("Enter the string which cases to be converted ");
+							System.out.println(stringMessage.caseConvString);
 							str = sc.nextLine();
 							//sc.nextLine();
 							System.out.println("The new string is:"+strMethod.caseConversion(str));
@@ -73,10 +76,10 @@ public class StringOperation {
 						}
 					}
 					break;
-				case 4 :
+				case FIND_LARG_WORD :
 					while(invalidInput == 0){
 						try {
-							System.out.println("Enter the string which largest word to be find ");
+							System.out.println(stringMessage.stringLargWord);
 							str = sc.nextLine();
 							//sc.nextLine();
 							System.out.println("The largest word in string is:"+strMethod.largestWord(str));
@@ -87,15 +90,15 @@ public class StringOperation {
 						}
 					}
 					break;
-				case 5 :
-					System.out.println(stringMessage.thankYou);
+				case EXIT :
+					System.out.println(messages.thankYou);
 					System.exit(0);
 					sc.close();
 				default :
-					System.out.println("Invalid!! entry");
+					System.out.println(stringMessage.invalidEntry);
 				}
 			} catch (Exception e) {
-				System.out.println("Ënter valid operation");
+				System.out.println(stringMessage.invalidOperation);
 				sc.nextLine();
 			}
 		}
