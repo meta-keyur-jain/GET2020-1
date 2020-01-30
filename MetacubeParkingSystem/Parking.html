@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Parking System</title>
+    <link href="parkingStyle.css" rel="stylesheet"></link>
+    <script type="text/javascript" src="parkingValidation.js"></script>
+
+</head>
+
+<body>
+    <div class="parking-system">
+        <!-- Employee registeration form -->
+        <div id="add-employee" class="add-employee">
+            <h1 class="M0">EMPLOYEE DETAILS</h1>
+            <form id="employee-details-form" onsubmit="return false" autocomplete="off">
+                <div class="form-label-input-container">
+                    <div class="input-data">
+                        <label class="form-label">Full Name</label>
+                        <input class="form-control" id="FullName" type="text" name="FullName" placeholder="Enter Full Name" autofocus required>
+                        <br/>
+                        <span class="validation-message" id='invalidName'></span>
+                    </div>
+                    <div class="input-data">
+                        <label class="form-label">Gender</label>
+                        <label><input id="Gender" type="radio" name="Gender" value="Male" autofocus required class="form-control radio-btn M0">&nbsp; Male</label>
+                        <label><input id="Gender" type="radio" name="Gender" value="Female" autofocus required class="form-control radio-btn M0">&nbsp; Female</label>
+                        <label><input id="Gender" type="radio" name="Gender" value="Other" autofocus required class="form-control radio-btn M0">&nbsp; Other</label>
+                    </div>
+                    <div class="input-data">
+                        <label class="form-label">Email</label>
+                        <input class="form-control" id="Email" type="text" name="Email" placeholder="Enter Email" autofocus required>
+                        <br/>
+                        <span class="validation-message" id='invalidEmail'></span>
+                    </div>
+                    <div class="input-data">
+                        <label class="form-label">Contact Number</label>
+                        <span>+91</span>
+                        <input class="form-control form-control-contact" id="Contact" type="text" name="Contact" placeholder="Enter Contact Number" autofocus required>
+                        <br/>
+                        <span class="validation-message" id='invalidContact'></span>
+                    </div>
+                    <div class="input-data">
+                        <label class="form-label">Password</label>
+                        <input class="form-control" id="Password" type="password" name="Password" placeholder="Enter Password" onkeyup="checkPasswordValidation();" required>
+                        <br/>
+                        <span class="validation-message" id='invalidPassword'></span>
+                    </div>
+
+                    <div class="input-data">
+                        <label class="form-label">Confirm Password</label>
+                        <input class="form-control" id="ConfirmPassword" type="password" name="ConfirmPassword" placeholder="Confirm Password" onkeyup="checkPasswordEqual();">
+                        <br/>
+                        <span class="validation-message" id='equalPassword'></span>
+                    </div>
+                    <div class="input-data">
+                        <input class="employee-details-form-submit" id="Submit" type="submit" value="Register" onclick="employeeRegistration()">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- Employee registeration end -->
+        <!-- Employee registered message start-->
+        <div id="employee-registered-message" class="employee-registered-message" style="display: none;">
+            <span id="registered" class="registered-message"></span>
+        </div>
+        <!-- Employee registered message end-->
+        <!-- Add vehicle form -->
+        <div id="add-vehicle-form" class="add-vehicle-form" style="display: none;">
+            <h1>VEHICLE DETAILS</h1>
+            <form id="vehicle-details-form" onsubmit="return false">
+                <div class="form-label-input-container">
+                    <div class="input-data">
+                        <label class="form-label">Vehicle Name</label>
+                        <input class="form-control" id="VehicleName" type="text" name="VehicleName" placeholder="Enter Vehicle Name" autofocus required>
+                        <br/>
+                        <span class="validation-message" id='invalidVehicleName'></span>
+                    </div>
+                    <div class="input-data">
+                        <label class="form-label">Vehicle Type</label>
+                        <select id="Type" name="Type" required>
+                            <option value="none" disabled selected>Select Vehicle Type</option>
+                            <option value="Cycle">Cycle</option>
+                            <option value="MotorCycle">Motor Cycle</option>
+                            <option value="FourWheelers">Four Wheelers</option>
+                        </select>&nbsp
+                        <br/>
+                        <span class="validation-message" id='invalidType'></span>
+                    </div>
+                    <div class="input-data">
+                        <label class="form-label">Vehicle Number</label>
+                        <input class="form-control" id="VehicleNumber" type="text" name="VehicleNumber" placeholder="Enter Vehicle Number" autofocus required>
+                    </div>
+                    <br/>
+                    <span class="validation-message" id='invalidVehicleNumber'></span>
+                    <div class="input-data">
+                        <label class="form-label">Employee Id</label>
+                        <input class="form-control" id="EmployeeId" type="text" name="EmployeeId" readonly>
+                    </div>
+                    <div class="input-data">
+                        <label class="form-label">Identification</label>
+                        <textarea id="Identification" name="Identification" placeholder="Vehicle Identification details" rows="4" cols="50" autofocus required></textarea>
+                        <br/>
+                        <span class="validation-message" id='invalidIdentity'></span>
+                    </div>
+                    <div class="vehicle-details-form-buttons">
+                        <input class="vehicle-details-form-submit-buttons" id="Submit" type="submit" value="Add Vehicle" onclick="vehicleRegister()">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- Add vehicle form end -->
+        <!-- Vehicle price details starts -->
+        <div class="vehicle-Price-div" id="vehicle-Price-div" style="display: none;">
+            <h1>PRICE DETAILS</h1>
+            <form class="vehicle-Price-form" id="vehicle-Price-form" onsubmit="return false">
+                <table class="price-table" align="center" cellspacing="10" cellpadding="20">
+                    <tr class="price-content-type" id="price-content-type" style="display: none;">
+                        <th class="content-type-header">
+                            <h3>Type</h3>
+                        </th>
+                        <th class="content-type-header">
+                            <h3>Daily</h3>
+                        </th>
+                        <th class="content-type-header">
+                            <h3>Mothly</h3>
+                        </th>
+                        <th class="content-type-header">
+                            <h3>Yearly</h3>
+                        </th>
+                    </tr>
+
+                    <tr class="table-data" id="Cycle" style="display: none;">
+                        <th class="content-name">
+                            <h4>Cycle</h4>
+                        </th>
+                        <td><input class="form-control p" value="5" type="radio" name="price"><span class="sign">USD</span>
+                            <p class="money">5</p>
+                        </td>
+                        <td><input class="form-control p" value="100" type="radio" name="price"><span class="sign">USD</span>
+                            <p class="money">100</p>
+                        </td>
+                        <td><input class="form-control p" value="500" type="radio" name="price"><span class="sign">USD</span>
+                            <p class="money">500</p>
+                        </td>
+                    </tr>
+
+                    <tr class="table-data" id="MotorCycle" style="display: none;">
+                        <th class="content-name">
+                            <h4>Motor Cycle</h4>
+                        </th>
+                        <td><input class="form-control p" value="100" type="radio" name="price"><span class="sign">USD</span>
+                            <p class="money">100</p>
+                        </td>
+                        <td><input class="form-control p" value="200" type="radio" name="price"><span class="sign">USD</span>
+                            <p class="money">200</p>
+                        </td>
+                        <td><input class="form-control p" value="1000" type="radio" name="price"><span class="sign">USD</span>
+                            <p class="money">1000</p>
+                        </td>
+                    </tr>
+
+                    <tr class="table-data" id="FourWheelers" class="p" style="display: none;">
+                        <th class="content-name">
+                            <h4>Four Wheelers</h4>
+                        </th>
+                        <td><input class="form-control p" value="20" type="radio" name="price"><span class="sign">USD</span>
+                            <p class="money">20</p>
+                        </td>
+                        <td><input class="form-control p" value="500" type="radio" name="price"><span class="sign">USD</span>
+                            <p class="money">500</p>
+                        </td>
+                        <td><input class="form-control p" value="3500" type="radio" name="price"><span class="sign">USD</span>
+                            <p class="money">3500</p>
+                        </td>
+                    </tr>
+
+                    <tr id="button" style="display: none;">
+                        <th><button class="form-control" onclick="takeGetPass()" type="submit">Gate Pass</button></th>
+                        <th>
+                            <select id="price" onchange="changeCurrency()">
+                                <option disabled selected>Change Currency</option>
+                                <option value="USD">USD</option>
+                                <option value="YEN">YEN</option>
+                                <option value="INR">INR</option>
+                            </select>
+                        </th>
+                        <th class="error-message" id="error-message"></th>
+                    </tr>
+
+                </table>
+            </form>
+        </div>
+        <!-- vehicle price details ends -->
+        <!-- total amount details -->
+        <center>
+            <h2 id="totalAmount"></h2>
+        </center>
+    </div>
+</body>
+
+</html>
