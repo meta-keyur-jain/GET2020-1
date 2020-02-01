@@ -1,0 +1,85 @@
+    .parking-system {
+        margin: 0 auto;
+        width: 500px;
+        margin-top: 60px;
+    }
+    
+    .employee-registered-message {
+        outline-style: solid;
+        background-color: greenyellow;
+        margin-top: 5px;
+        font-size: 20px;
+        margin-bottom: 50px;
+    }
+    
+    .vehicle-Price-div h1,
+    .add-employee h1,
+    .add-vehicle-form h1 {
+        text-align: center;
+        font-style: oblique;
+    }
+    
+    .vehicle-Price-div,
+    .add-employee,
+    .add-vehicle-form {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        height: 550px;
+    }
+    
+    .parking-system form.employee-details-form {
+        margin-left: 250px;
+    }
+    
+    label.form-label {
+        font-size: 20px;
+        margin-left: 20px;
+        padding: 12px 12px 12px 0;
+        width: 162px;
+        display: inline-block;
+    }
+    
+    form textarea {
+        height: 50px;
+    }
+    
+    form label+input {
+        margin-bottom: 20px;
+    }
+    
+    .form-label-input-container .input-data .form-control-contact {
+        width: 156px;
+    }
+    
+    .vehicle-Price-div button[type=submit],
+    .add-employee input[type=submit],
+    .add-vehicle-form input[type=submit] {
+        background-color: #4CAF50;
+        padding: 12px 20px;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+    }
+    
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+    
+    .error-message {
+        float: right;
+        color: red;
+    }
+    
+    input[type=text].form-control,
+    input[type=password].form-control,
+    select.form-control,
+    textarea.form-control {
+        width: 40%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
